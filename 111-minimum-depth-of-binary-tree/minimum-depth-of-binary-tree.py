@@ -9,19 +9,9 @@ class Solution:
         if not root:
             return 0
         
-        count = float('inf')
-        def min_height(node, height):
-            nonlocal count
-            if not node:
-                return
-
-            if not node.right and not node.left:
-                count = min(count, height)
-                return 
-            
-            min_height(node.left, height + 1)
-            min_height(node.right, height + 1)
-        
-        min_height(root, 1)
-        
-        return count
+        if not root.left:
+            return 1 + self.minDepth(root.right)
+        if not root.right:
+            return 1 + self.minDepth(root.left)
+                
+        return 1 + min(self.minDepth(root.left), self.minDepth(root.right))
