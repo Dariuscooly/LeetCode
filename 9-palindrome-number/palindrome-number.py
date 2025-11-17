@@ -2,7 +2,6 @@ class Solution:
     def isPalindrome(self, x: int) -> bool: 
         val = str(x)
         right, left = len(val) - 1, 0
-        currentLength = len(val)
 
         while left < right:
             if val[left] != val[right]:
