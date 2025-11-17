@@ -4,7 +4,7 @@ class Solution:
         right, left = len(val) - 1, 0
         currentLength = len(val)
 
-        while left < right and currentLength > 1:
+        while left < right:
             if val[left] != val[right]:
                 return False
             left += 1
